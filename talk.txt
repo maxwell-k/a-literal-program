@@ -1,0 +1,178 @@
+:title: Literate programming and criticism
+:author: Keith Maxwell
+:description: A talk for Papers We Love Belfast #5
+:date: 15 November 2017
+:keywords: literate, programming, UNIX, engineering
+:css: talk.css
+
+----
+
+:id: Title
+
+Papers We Love Belfast #5
+-------------------------
+
+A LITERATE PROGRAM, June 1986
+=============================
+
+15 November 2017
+~~~~~~~~~~~~~~~~
+
+----
+
+:id: why
+
+Why? Love?
+----------
+
+.. note::
+
+    -   why this paper?
+
+        -   open question: arguments for and against literate programming
+        -   topical, growing in popularity:
+
+            -   software engineer for 7 business days
+            -   ODSC - iPython / Jupyter notebooks - IBM
+
+        -   history:
+
+            -   fascinating
+            -   I have a lot to learn
+
+        -   engineering
+        -   oftern old fashioned tools are the best
+
+            -   vim, SQLite, …
+            -   Unix command line
+            -   even got into PowerShell
+
+    -   [overview]
+    -   informal
+
+        -   questions at the end
+        -   a few surveys
+
+----
+
+:id: Heavyweights
+
+| programming
+| pearls
+|
+|   by Jon Bentley
+|   with Special Guest Oysters
+|     Don Knuth and Doug McIlroy
+
+.. note::
+
+    -   June 1986: most people had stopped debating whether ``goto`` were
+        acceptable
+
+    -   Communications of the ACM
+
+        -   since 1957
+        -   Association for Computing Machinery - world's largest computing
+            society
+        -   science magazine, trade journal and scientific journal
+        -   typically summaries of research
+
+        .. https://portalparts.acm.org/10000/5948/cover/June1986.jpg
+
+    -   Don Knuth
+
+        -   46 years old, (born in 10 January 1938 so 48 in June 1986)
+        -   Won Turing award from the ACM 12 years earlier computing's Nobel
+            prize
+        -   The Art of Computer Programming (published volumes one to three)
+        -   hexadecimal dollar for errors: $2.56
+            cheques likely framed or scanned led to scammers
+        -   TeX: version numbers approaching π
+
+    -   Doug McIlory
+
+        -   “I had the good fortune to head the research department at Bell
+            Labs in which Unix was born, and to work with some of the most
+            creative talents in computing”
+        -   Ken Thompson, Dennis Ritchie, Brian Kernighan
+        -   software components
+        -   "The real hero of programming is the one who writes negative code"
+
+    .. https://www.usenix.org/about/awards/flame
+
+
+Literature
+----------
+
+| Second, small assignment statements are grouped
+| several to the line with no particularly clear rationale.
+| This convention saves space; but the groupings
+| impose a false and distracting phrasing, like “poetry”
+| produced by randomly breaking prose into lines.
+
+
+-   inviting to read
+-   “Most real programs are written to be executed but not read”
+-   “good writing requires good reading-you can’t write a novel if you’ve never
+    read one“
+-   ““literate programming” implies that its practitioners must be competent in
+    both literature and programming; it is hard enough to find people with one
+    of those skills, let alone both”
+
+-   a message from its authors to its readers
+-   literate programming vs semi-literate - ordering
+-   Jupyter notebooks - how many people?
+-   Pascal how many people?
+-   WEB system:
+
+    -   weave: produces tex source, compiled
+    -   tangle: produces Pascal source
+
+
+----
+
+Live demo
+---------
+Without a trip to Argos
+
+..
+    cd /media/removable/TALK/
+    pdftotext May1986.pdf
+    pdftotext June1986.pdf
+    cat May1986.txt June1986.txt > papers.txt
+    wc papers.txt
+    ./mcilroy.sh 20 <papers.txt
+
+.. :read mcilroy.sh | normal >ap
+
+.. code:: sh
+
+    #/bin/sh
+    tr -cs A-Za-z '
+    ' |
+    tr A-Z a-z |
+    sort |
+    uniq -c |
+    sort -rn |
+    sed ${1}q
+
+----
+
+Criticism
+---------
+
+----
+
+Discussion? Questions?
+======================
+
+ .. |br| raw:: html
+
+   <br />
+
+Keith Maxwell |br| keith.maxwell@gmail.com |br|
+https://www.linkedin.com/in/ksmaxwell
+
+.. image:: causeway.png
+
+.. vim: ft=rst

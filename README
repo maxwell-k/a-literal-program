@@ -1,0 +1,45 @@
+Install hovercraft under Alpine Linux:
+
+.. code:: sh
+
+    sudo apk add py3-lxml py3-docutils
+    sudo mkdir /opt/talk
+    sudo chown chronos:chronos /opt/talk
+    python3 -m venv --system-site-packages /opt/talk
+    /opt/talk/bin/pip install hovercraft
+
+Download the examples and documentation
+
+.. code:: sh
+
+    cd /media/removable/TALK/
+    git clone https://github.com/regebro/hovercraft/
+
+Compile the presentation:
+
+.. code:: sh
+
+    cd /media/removable/TALK
+    /opt/talk/bin/hovercraft talk.txt outdir/
+
+Download the logo:
+
+.. code:: sh
+
+    curl http://www.causewaysensors.com/images/footer-logo.png -o causeway.png
+
+Watch and rebuild the presentation:
+
+.. code:: sh
+
+    sudo apk add inotify-tools inotify-tools-doc
+
+    inotifywait --exclude 'outdir/.*' -e close_write -m . |
+    while read -r directory events filename; do
+        if [ "${filename%%.*}" = "talk" ]; then
+            printf '%s\n' "${filename}" &&
+            /opt/talk/bin/hovercraft talk.txt outdir/ ;
+        fi ;
+    done
+
+.. vim: ft=rst
