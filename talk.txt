@@ -5,6 +5,16 @@
 :keywords: literate, programming, UNIX, engineering
 :css: talk.css
 
+.. |br| raw:: html
+
+
+   <br />
+
+.. |tab| raw:: html
+
+    <span class="tab" ></span>
+
+
 ----
 
 :id: Title
@@ -18,6 +28,14 @@ A LITERATE PROGRAM, June 1986
 15 November 2017
 ~~~~~~~~~~~~~~~~
 
+.. note::
+
+    Thanks for coming
+    Interesting topic for me, history and context
+    This isn't one of the about an unsolved computer science problem
+    About techniques
+
+
 ----
 
 :id: why
@@ -27,47 +45,53 @@ Why? Love?
 
 .. note::
 
-    -   why this paper?
+    -   why this paper? why talk about it?
 
+        -   learn: knowledgable audience
         -   open question: arguments for and against literate programming
         -   topical, growing in popularity:
 
+            -   ODSC - iPython / Jupyter notebooks - IBM Pixiedust
+
+        -   engineering
+
             -   software engineer for 7 business days
-            -   ODSC - iPython / Jupyter notebooks - IBM
+            -   McIlroy's section especially
 
         -   history:
 
             -   fascinating
             -   I have a lot to learn
 
-        -   engineering
-        -   oftern old fashioned tools are the best
+        -   I often prefer old fashioned tools and concepts
 
             -   vim, SQLite, …
             -   Unix command line
             -   even got into PowerShell
 
-    -   [overview]
     -   informal
 
         -   questions at the end
         -   a few surveys
 
+.. TODO: overview?
+
+
 ----
 
 :id: Heavyweights
 
-| programming
-| pearls
-|
-|   by Jon Bentley
-|   with Special Guest Oysters
-|     Don Knuth and Doug McIlroy
+.. class:: heading
+
+programming |br|
+pearls
+
+by Jon Bentley |br|
+with Special Guest Oysters |br|
+|tab|
+Don Knuth and Doug McIlroy
 
 .. note::
-
-    -   June 1986: most people had stopped debating whether ``goto`` were
-        acceptable
 
     -   Communications of the ACM
 
@@ -98,50 +122,151 @@ Why? Love?
         -   software components
         -   "The real hero of programming is the one who writes negative code"
 
+    -   May 1986 Bentley said: most people had stopped debating whether
+        ``goto`` were acceptable
+
     .. https://www.usenix.org/about/awards/flame
-
-
-Literature
-----------
-
-| Second, small assignment statements are grouped
-| several to the line with no particularly clear rationale.
-| This convention saves space; but the groupings
-| impose a false and distracting phrasing, like “poetry”
-| produced by randomly breaking prose into lines.
-
-
--   inviting to read
--   “Most real programs are written to be executed but not read”
--   “good writing requires good reading-you can’t write a novel if you’ve never
-    read one“
--   ““literate programming” implies that its practitioners must be competent in
-    both literature and programming; it is hard enough to find people with one
-    of those skills, let alone both”
-
--   a message from its authors to its readers
--   literate programming vs semi-literate - ordering
--   Jupyter notebooks - how many people?
--   Pascal how many people?
--   WEB system:
-
-    -   weave: produces tex source, compiled
-    -   tangle: produces Pascal source
 
 
 ----
 
-Live demo
----------
-Without a trip to Argos
+:id: Pascal
+
+
+.. image:: visual-cobol.jpg
+    :height: 500px
+
+.. note::
+
+    Who read the paper?
+
+    Pascal
+    compiled, imperative, procedural
+    1970
+
+    Cobol
+    compiled, imperative, procedural
+    1959
+
+    Is Cobol pass by reference or by value? Reference by default_
+
+    How much COBOL programming have you done?
+    How much Pascal?
+
+
+    .. _default: https://www.ibm.com/support/knowledgecenter/en/SS6SG3_4.2.0/
+        com.ibm.entcobol.doc_4.2/PGandLR/tasks/tpshr03.htm
+
+----
+
+:id: Literature
 
 ..
-    cd /media/removable/TALK/
-    pdftotext May1986.pdf
-    pdftotext June1986.pdf
-    cat May1986.txt June1986.txt > papers.txt
-    wc papers.txt
-    ./mcilroy.sh 20 <papers.txt
+
+    … small assignment statements are grouped
+    several to the line with no particularly clear rationale.
+    This convention saves space; but the groupings
+    impose a false and distracting phrasing, like “poetry”
+    produced by randomly breaking prose into lines.
+
+
+..
+
+.. note::
+
+    -   Knuth's insight is to focuse on the program as a message from its
+        authors to its readers
+    -   inviting to read; vs too much typesetting
+    -   google style guide for vim script
+    -   “Most real programs are written to be executed but not read”
+    -   “good writing requires good reading-you can’t write a novel if you’ve
+        never read one“ Bentley in May
+    -   ““literate programming” implies that its practitioners must be
+        competent in both literature and programming; it is hard enough to
+        find people with one of those skills, let alone both” Bentley in May
+    -   literate programming vs semi-literate - ordering
+    -   Jupyter notebooks - how many people?
+    -   WEB system:
+
+        -   weave: produces tex source, compiled
+        -   tangle: produces Pascal source
+
+    -   engineering - a different set of compromises read vs execute
+
+----
+
+:id: Criticism
+
+
+    My dictionary defines criticism as “the art of evaluating
+    or analyzing with knowledge and propriety, especially
+    works of art or literature.‟
+
+----
+
+
+:id: Engineering
+
+    A first engineering
+    question to ask is: how often is one likely to have to
+    do this exact task’? Not at all often, I contend. It is
+    plausible, though, that similar, but not identical,
+    problems might arise. A wise engineering solution
+    would produce-or better, exploit-reusable parts.
+
+
+.. note::
+
+    -   set of compromises
+    -   Mass produced software components in 1968
+        The Software Industry is not Industrialised
+        mass production techniques
+    -   No one sells software components
+    -   Example of Sine routine - how many would a standard catalogue offer?
+    -   I studied engineering rather than computer science for first undergrad
+    -   learned a lot from that
+
+    -   McIlroy writing about the Unix Philosophy as Style in the Bell System
+        Technical Journal in 1978
+
+        1.  Make each program do one thing well. To do a new job, build afresh
+            rather than complicate old programs by adding new "features".
+        2.  Expect the output of every program to become the input to another,
+            as yet unknown, program. Don't clutter output with extraneous
+            information. Avoid stringently columnar or binary input formats.
+            Don't insist on interactive input.
+        3.  Design and build software, even operating systems, to be tried
+            early, ideally within weeks. Don't hesitate to throw away the
+            clumsy parts and rebuild them.
+        4.  Use tools in preference to unskilled help to lighten a programming
+            task, even if you have to detour to build the tools and expect to
+            throw some of them out after you've finished using them.
+
+Chome OS live demo
+------------------
+
+*Without visiting Argos ☺*
+
+.. note::
+
+    -   21 years later runs fine
+    -   amazing, purchase a PC on the high street
+    -   one small problem with the typesetting from the paper
+
+        -   a missing space, I think lost as it was printed and scanned
+        -   I would not have been able to find a single character mistake in
+            Knuth's Pascal
+
+    -   twenty-page technical paper
+
+    .. code:: sh
+
+        cd /media/removable/TALK/
+        pdftotext May1986.pdf
+        pdftotext June1986.pdf
+        cat May1986.txt June1986.txt > papers.txt
+        wc papers.txt
+        ./mcilroy.sh 20 <papers.txt
 
 .. :read mcilroy.sh | normal >ap
 
@@ -158,17 +283,10 @@ Without a trip to Argos
 
 ----
 
-Criticism
----------
-
-----
+:id: questions
 
 Discussion? Questions?
 ======================
-
- .. |br| raw:: html
-
-   <br />
 
 Keith Maxwell |br| keith.maxwell@gmail.com |br|
 https://www.linkedin.com/in/ksmaxwell
