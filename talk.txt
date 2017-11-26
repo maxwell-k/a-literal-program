@@ -7,7 +7,6 @@
 
 .. |br| raw:: html
 
-
    <br />
 
 .. |tab| raw:: html
@@ -73,9 +72,6 @@ Why? Love?
 
         -   questions at the end
         -   a few surveys
-
-.. TODO: overview?
-
 
 ----
 
@@ -169,12 +165,9 @@ Don Knuth and Doug McIlroy
     impose a false and distracting phrasing, like “poetry”
     produced by randomly breaking prose into lines.
 
-
-..
-
 .. note::
 
-    -   Knuth's insight is to focuse on the program as a message from its
+    -   Knuth's insight is to focus on the program as a message from its
         authors to its readers
     -   inviting to read; vs too much typesetting
     -   google style guide for vim script
@@ -197,6 +190,7 @@ Don Knuth and Doug McIlroy
 
 :id: Criticism
 
+..
 
     My dictionary defines criticism as “the art of evaluating
     or analyzing with knowledge and propriety, especially
@@ -204,8 +198,9 @@ Don Knuth and Doug McIlroy
 
 ----
 
-
 :id: Engineering
+
+..
 
     A first engineering
     question to ask is: how often is one likely to have to
@@ -242,8 +237,12 @@ Don Knuth and Doug McIlroy
             task, even if you have to detour to build the tools and expect to
             throw some of them out after you've finished using them.
 
-Chome OS live demo
-------------------
+----
+
+:id: Demo
+
+Chrome OS live demo
+-------------------
 
 *Without visiting Argos ☺*
 
@@ -293,4 +292,4 @@ https://www.linkedin.com/in/ksmaxwell
 
 .. image:: causeway.png
 
-.. vim: ft=rst
+.. vim: ft=rst spell spellcapcheck=
