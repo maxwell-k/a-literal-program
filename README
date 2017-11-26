@@ -3,10 +3,10 @@ Install hovercraft under Alpine Linux:
 .. code:: sh
 
     sudo apk add py3-lxml py3-docutils
-    sudo mkdir /opt/talk
-    sudo chown chronos:chronos /opt/talk
-    python3 -m venv --system-site-packages /opt/talk
-    /opt/talk/bin/pip install hovercraft
+    sudo mkdir /opt/hovercraft
+    sudo chown chronos:chronos /opt/hovercraft
+    python3 -m venv --system-site-packages /opt/hovercraft
+    /opt/hovercraft/bin/pip install hovercraft
 
 ``talk.css`` uses Google Fonts, the browser will cache these so that they are
 available offline. The cache will eventually expire, so revisit the page with
@@ -24,7 +24,7 @@ Compile the presentation:
 .. code:: sh
 
     cd /media/removable/TALK
-    /opt/talk/bin/hovercraft talk.txt outdir/
+    /opt/hovercraft/bin/hovercraft talk.txt outdir/
 
 Download the images:
 
@@ -43,7 +43,7 @@ Watch and rebuild the presentation:
     inotifywait --exclude 'outdir/.*' -e close_write -m . |
     while read -r directory events filename; do
         if [ "${filename%%.*}" = "talk" ]; then
-            /opt/talk/bin/hovercraft talk.txt outdir/ &&
+            /opt/hovercraft/bin/hovercraft talk.txt outdir/ &&
             printf '%s\n' "${filename}" ;
         fi ;
     done
