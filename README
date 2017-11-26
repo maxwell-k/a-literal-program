@@ -8,6 +8,10 @@ Install hovercraft under Alpine Linux:
     python3 -m venv --system-site-packages /opt/talk
     /opt/talk/bin/pip install hovercraft
 
+``talk.css`` uses Google Fonts, the browser will cache these so that they are
+available offline. The cache will eventually expire, so revisit the page with
+an internet connection, before presenting.
+
 Download the examples and documentation
 
 .. code:: sh
@@ -22,7 +26,7 @@ Compile the presentation:
     cd /media/removable/TALK
     /opt/talk/bin/hovercraft talk.txt outdir/
 
-Download the logo:
+Download the images:
 
 .. code:: sh
 
