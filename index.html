@@ -1,0 +1,65 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Literate programming and criticism</title><meta charset="UTF-8"></meta><meta name="generator" content="Hovercraft! 1.0 http://regebro.github.com/hovercraft"></meta><meta name="author" content="Keith Maxwell"></meta><meta name="description" content="A talk for Papers We Love Belfast #5"></meta><meta name="keywords" content="literate, programming, UNIX, engineering"></meta><link rel="stylesheet" href="css/hovercraft.css" media="all"></link><link rel="stylesheet" href="css/impressConsole.css" media="all"></link><link rel="stylesheet" href="css/highlight.css" media="all"></link><link rel="stylesheet" href="talk.css" media="screen,projection"></link><script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: "none",
+        TeX : { extensions : ['color.js'] }
+      });
+    </script></head><body class="impress-not-supported"><div id="impress"><div class="step step-level-1" step="0" id="Title" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="0" data-y="0" data-z="0"><h1 id="papers-we-love-belfast-5">Papers We Love Belfast #5</h1><h2 id="a-literate-program-june-1986">A LITERATE PROGRAM, June 1986</h2><h3 id="november-2017">15 November 2017</h3><div class="notes"><p>Thanks for coming
+Interesting topic for me, history and context
+This isn't one of the about an unsolved computer science problem
+About techniques</p></div></div><div class="step step-level-1" step="1" id="why" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="1600" data-y="0" data-z="0"><h1 id="why-love">Why? Love?</h1><div class="notes"><ul><li>why this paper? why talk about it?<ul><li>learn: knowledgable audience</li><li>open question: arguments for and against literate programming</li><li>topical, growing in popularity:<ul><li>ODSC - iPython / Jupyter notebooks - IBM Pixiedust</li></ul></li><li>engineering<ul><li>software engineer for 7 business days</li><li>McIlroy's section especially</li></ul></li><li>history:<ul><li>fascinating</li><li>I have a lot to learn</li></ul></li><li>I often prefer old fashioned tools and concepts<ul><li>vim, SQLite, &#x2026;</li><li>Unix command line</li><li>even got into PowerShell</li></ul></li></ul></li><li>informal<ul><li>questions at the end</li><li>a few surveys</li></ul></li></ul></div></div><div class="step step-level-1" step="2" id="Heavyweights" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="3200" data-y="0" data-z="0"><p class="heading">programming <br />
+pearls</p><p>by Jon Bentley <br />
+with Special Guest Oysters <br />
+<span class="tab" ></span>
+Don Knuth and Doug McIlroy</p><div class="notes"><ul><li>Communications of the ACM<ul><li>since 1957</li><li>Association for Computing Machinery - world's largest computing
+society</li><li>science magazine, trade journal and scientific journal</li><li>typically summaries of research</li></ul></li><li>Don Knuth<ul><li>46 years old, (born in 10 January 1938 so 48 in June 1986)</li><li>Won Turing award from the ACM 12 years earlier computing's Nobel
+prize</li><li>The Art of Computer Programming (published volumes one to three)</li><li>hexadecimal dollar for errors: $2.56
+cheques likely framed or scanned led to scammers</li><li>TeX: version numbers approaching &#x3C0;</li></ul></li><li>Doug McIlory<ul><li>&#x201C;I had the good fortune to head the research department at Bell
+Labs in which Unix was born, and to work with some of the most
+creative talents in computing&#x201D;</li><li>Ken Thompson, Dennis Ritchie, Brian Kernighan</li><li>software components</li><li>"The real hero of programming is the one who writes negative code"</li></ul></li><li>May 1986 Bentley said: most people had stopped debating whether
+<tt>goto</tt> were acceptable</li></ul></div></div><div class="step step-level-1" step="3" id="Pascal" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="4800" data-y="0" data-z="0"><img src="visual-cobol.jpg" height="500px"></img><div class="notes"><p>Who read the paper?</p><p>Pascal
+compiled, imperative, procedural
+1970</p><p>Cobol
+compiled, imperative, procedural
+1959</p><p>Is Cobol pass by reference or by value? Reference by <a href="https://www.ibm.com/support/knowledgecenter/en/SS6SG3_4.2.0/com.ibm.entcobol.doc_4.2/PGandLR/tasks/tpshr03.htm">default</a></p><p>How much COBOL programming have you done?
+How much Pascal?</p></div></div><div class="step step-level-1" step="4" id="Literature" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="6400" data-y="0" data-z="0"><blockquote><p>&#x2026; small assignment statements are grouped
+several to the line with no particularly clear rationale.
+This convention saves space; but the groupings
+impose a false and distracting phrasing, like &#x201C;poetry&#x201D;
+produced by randomly breaking prose into lines.</p></blockquote><div class="notes"><ul><li>Knuth's insight is to focus on the program as a message from its
+authors to its readers</li><li>inviting to read; vs too much typesetting</li><li>google style guide for vim script</li><li>&#x201C;Most real programs are written to be executed but not read&#x201D;</li><li>&#x201C;good writing requires good reading-you can&#x2019;t write a novel if you&#x2019;ve
+never read one&#x201C; Bentley in May</li><li>&#x201C;&#x201C;literate programming&#x201D; implies that its practitioners must be
+competent in both literature and programming; it is hard enough to
+find people with one of those skills, let alone both&#x201D; Bentley in May</li><li>literate programming vs semi-literate - ordering</li><li>Jupyter notebooks - how many people?</li><li>WEB system:<ul><li>weave: produces tex source, compiled</li><li>tangle: produces Pascal source</li></ul></li><li>engineering - a different set of compromises read vs execute</li></ul></div></div><div class="step step-level-1" step="5" id="Criticism" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="8000" data-y="0" data-z="0"><blockquote><p>My dictionary defines criticism as &#x201C;the art of evaluating
+or analyzing with knowledge and propriety, especially
+works of art or literature.&#x201F;</p></blockquote></div><div class="step step-level-1" step="6" id="Engineering" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="9600" data-y="0" data-z="0"><blockquote><p>A first engineering
+question to ask is: how often is one likely to have to
+do this exact task&#x2019;? Not at all often, I contend. It is
+plausible, though, that similar, but not identical,
+problems might arise. A wise engineering solution
+would produce-or better, exploit-reusable parts.</p></blockquote><div class="notes"><ul><li>set of compromises</li><li>Mass produced software components in 1968
+The Software Industry is not Industrialised
+mass production techniques</li><li>No one sells software components</li><li>Example of Sine routine - how many would a standard catalogue offer?</li><li>I studied engineering rather than computer science for first undergrad</li><li>learned a lot from that</li><li>McIlroy writing about the Unix Philosophy as Style in the Bell System
+Technical Journal in 1978<ol><li>Make each program do one thing well. To do a new job, build afresh
+rather than complicate old programs by adding new "features".</li><li>Expect the output of every program to become the input to another,
+as yet unknown, program. Don't clutter output with extraneous
+information. Avoid stringently columnar or binary input formats.
+Don't insist on interactive input.</li><li>Design and build software, even operating systems, to be tried
+early, ideally within weeks. Don't hesitate to throw away the
+clumsy parts and rebuild them.</li><li>Use tools in preference to unskilled help to lighten a programming
+task, even if you have to detour to build the tools and expect to
+throw some of them out after you've finished using them.</li></ol></li></ul></div></div><div class="step step-level-1" step="7" id="Demo" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="11200" data-y="0" data-z="0"><h1 id="chrome-os-live-demo">Chrome OS live demo</h1><p><em>Without visiting Argos &#x263A;</em></p><div class="notes"><ul><li>21 years later runs fine</li><li>amazing, purchase a PC on the high street</li><li>one small problem with the typesetting from the paper<ul><li>a missing space, I think lost as it was printed and scanned</li><li>I would not have been able to find a single character mistake in
+Knuth's Pascal</li></ul></li><li>twenty-page technical paper</li></ul><pre class="highlight code sh"><span class="nb">cd</span> /media/removable/TALK/
+pdftotext May1986.pdf
+pdftotext June1986.pdf
+cat May1986.txt June1986.txt &gt; papers.txt
+wc papers.txt
+./mcilroy.sh <span class="m">20</span> &lt;papers.txt</pre></div><pre class="highlight code sh"><span class="c1">#/bin/sh
+</span>tr -cs A-Za-z <span class="s1">'
+'</span> <span class="p">|</span>
+tr A-Z a-z <span class="p">|</span>
+sort <span class="p">|</span>
+uniq -c <span class="p">|</span>
+sort -rn <span class="p">|</span>
+sed <span class="si">${</span><span class="nv">1</span><span class="si">}</span>q</pre></div><div class="step step-level-1" step="8" id="questions" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="12800" data-y="0" data-z="0"><h1 id="discussion-questions">Discussion? Questions?</h1><p>Keith Maxwell <br /> <a href="mailto:keith.maxwell@gmail.com">keith.maxwell@gmail.com</a> <br />
+<a href="https://www.linkedin.com/in/ksmaxwell">https://www.linkedin.com/in/ksmaxwell</a></p><img src="causeway.png"></img></div></div><div id="hovercraft-help"><table><tr><th>Space</th><td>Forward</td></tr><tr><th>Right, Down, Page Down</th><td>Next slide</td></tr><tr><th>Left, Up, Page Up</th><td>Previous slide</td></tr><tr><th>P</th><td>Open presenter console</td></tr><tr><th>H</th><td>Toggle this help</td></tr></table></div><script type="text/javascript" src="js/impress.js"></script><script type="text/javascript" src="js/impressConsole.js"></script><script type="text/javascript" src="js/hovercraft.js"></script></body></html>

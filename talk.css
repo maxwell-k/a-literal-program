@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Coda');
+body {
+    font-family: 'Coda', cursive;
+    font-size: 200%;
+}
+.tab {
+    display: inline-block;
+    width: 100px;
+}
+.heading {
+    font-weight: bold;
+}
+#Heavyweights p {
+    font-size: 150%;
+}
+#Heavyweights p.heading {
+    font-size: 300%;
+}
+#why {
+    font-style: italic;
+    font-weight: normal;
+}
+blockquote {
+    font-style: italic;
+}
+#Pascal img {
+    height: 500px
+}
